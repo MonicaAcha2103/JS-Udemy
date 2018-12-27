@@ -56,10 +56,10 @@ function nextQuestion(){
 	
 	if(answer !== 'exit') {
 	questions[n].checkAnswer(parseInt(answer),keepScore);
-		//nextQuestion();
+	nextQuestion();
 	}
-	
+
 }
-nextQuestion();
+nextQuestion();	
 })();
 
