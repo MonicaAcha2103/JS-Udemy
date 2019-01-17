@@ -1,0 +1,101 @@
+when to use class components?
+-----------------------------
+1. this 
+2. lifecycle methods
+
+Important-React dom renders only one element.So wrap all components in a div.
+---------
+
+Stateless Functional Component
+----------------------------------
+	definition-
+	 x= function() {
+		return(
+		<h1>blah </h1>
+		);
+	}
+
+	usage- 
+	<x/>
+
+Class Component
+------------------
+
+    class Square extends React.Component {
+        render() {
+            return(
+                <h2>Hello</h2>
+            )
+        }
+    }
+    <Square>
+Styling Stateless Functional Componenet
+------------------------------------------
+    1. add link
+
+    	add <link rel="stylesheet" href="main.css" >
+
+    2. add class name
+
+        <h2 className="sq">Hello</h2>
+
+    3. normal style sheet format
+
+    .red{
+	    height:100px,
+	    weight: 100px
+    }
+
+React styling inline approach - better approach of above
+-------------------------------------------------------------
+	Rule No. 1. create javascript object
+
+		var Red = function(){
+			var redStyle= {
+			    height:100px;
+		    	weight: 100px;
+			}
+			return(
+			 <h2 style={redStyle}>Hello</h2>
+			 )
+		}
+
+	Rule No 2. assign object to attribute of element to style
+
+Styling class components
+-------------------------
+External styling and internal styling same as the above
+
+Props
+-----
+
+Components talk to each other
+Way of passing data from parent to child
+Unidirectional dat flow- top to down
+Immutable data(read only)
+
+State
+-----
+handles user input
+
+Functional Programming 
+----------------------
+1. Map
+2. Filter
+
+Higher order functions are the functions that return a function or accepts a function as a parameter.
+----------------------
+
+Pure function-
+-- Given the same input will always return the same output
+-- produces no side effect
+-- relies on no extra state
+Impure function example- Math.random()
+
+
+When you render a list of items, reacts stores some info about each item in the list. If you render a component that has a state, that state needs to be stored and regrdless of how you implement your components, react stores a reference to backing native views.
+When you update that list, React needs to determine what has changed..
+any crud operation,
+Key is a special propery that's reserved in React. When an element is created, React puls off the key property and stores the key directly on the returned element
+It looks like part of props, it cannot be referenced with "this.props.key"
+Key tells the identity of the component.if component changes, key is rerendered

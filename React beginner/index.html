@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- React Library -->
+    <script src="https://unpkg.com/react@16.5.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.5.0/umd/react-dom.development.js"></script>
+    <!-- Babel Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <title>React </title>
+</head>
+<body>
+    <div id="app">React has not rendered yet  </div>
+    <script type="text/babel">
+    //render dom what and where
+    class Circle extends React.Component {
+      render() {
+        return(
+          <h1>Circle</h1>
+        );
+      }
+    }
+    class Square extends React.Component {
+        render() {
+            return(
+                <h2>Hello</h2>
+            )
+        }
+    }
+    ReactDOM.render(
+        <div><Square/>
+        <Circle/></div>,
+      document.getElementById("app")
+    );
+
+    
+    </script>
+</body>
+</html>
