@@ -1,0 +1,86 @@
+<!-- INSERT BOILER PLATE CODE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- REACT LIBRARY -->
+  <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- REACT DOM LIBRARY -->
+  <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- BABEL LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <title>Dinner Vote</title>
+</head>
+<body>
+
+  <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT  -->
+  <div id="app">React has not rendered yet</div>
+
+  <!-- JAVASCRIPT -->
+  <script type="text/babel">
+    class DinnerVote extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state={
+            votes: 0};
+          this.onButtonAdd = this.onButtonAdd.bind(this);
+          this.onButtonSub = this.onButtonSub.bind(this);
+          }
+        onButtonAdd() {
+          this.setState({
+            votes: this.state.votes + 1
+          })
+        }
+        onButtonSub() {
+          this.setState({
+            votes: this.state.votes - 1
+          })
+        }
+        render() { 
+          var dinnerVoteStyle = {
+          // From Friendly
+          display: "inline-block",
+          textAlign: "center",
+          margin: 20,
+          height: 500,
+          width: 300,
+          padding: 0,
+          backgroundColor: "#FFF",
+          WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+          filter: "drop-shadow(0px 0px 5px #555)"
+        }
+        var foodStyle = {
+          height: 200,
+          width: 200,
+          marginTop: 20
+        }
+            return(
+              <div style={dinnerVoteStyle}>
+                  <img src={this.props.img} alt="food image" style={foodStyle}/>
+                  <h1>Dinner Time </h1>
+                  <p> Vote Here If you want this </p>
+                  <button onClick={this.onButtonAdd}>+1</button>
+                  <p> Vote Here If you dont want this </p>
+                  <button onClick={this.onButtonSub}>-1</button>     
+                  <p>Total: {this.state.votes}</p>
+
+              </div>
+
+            );
+        }
+    }
+    ReactDOM.render(
+      <div>
+        <DinnerVote img="https://static.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg"/>
+        <DinnerVote img="https://static.pexels.com/photos/58722/pexels-photo-58722.jpeg"/>
+        <DinnerVote img="https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg"/>
+      </div>,
+      document.getElementById("app")
+    );
+
+  </script>
+
+</body>
+</html>

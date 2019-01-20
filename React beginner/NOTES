@@ -87,15 +87,66 @@ Higher order functions are the functions that return a function or accepts a fun
 ----------------------
 
 Pure function-
--- Given the same input will always return the same output
--- produces no side effect
--- relies on no extra state
+-------------
+ Given the same input will always return the same output
+ produces no side effect
+ relies on no extra state
+
 Impure function example- Math.random()
+-----------------------
 
-
-When you render a list of items, reacts stores some info about each item in the list. If you render a component that has a state, that state needs to be stored and regrdless of how you implement your components, react stores a reference to backing native views.
+When you render a list of items, react stores some info about each item in the list. If you render a component that has a state, that state needs to be stored and regrdless of how you implement your components, react stores a reference to backing native views.
 When you update that list, React needs to determine what has changed..
-any crud operation,
 Key is a special propery that's reserved in React. When an element is created, React puls off the key property and stores the key directly on the returned element
 It looks like part of props, it cannot be referenced with "this.props.key"
 Key tells the identity of the component.if component changes, key is rerendered
+
+React Events
+-------------
+same like handling DOM Events
+Syntactic Difference -
+1. React elements are named using CamelCase rather than lowerCase
+2. With JSX you pass a function as event handler, rather than a string.
+
+Naming Convention of Events
+---------------------------
+1. begin with "on" or "handle"
+name the DOM element
+2. Name the DOM element
+3. Describe the expected action
+
+This and bind
+-------------
+bind creates a new function that will have this set to the first parameter passed to bind()
+func.bind(obj)
+usually inside constructor bind is used
+
+React State-
+1. React will invoke the props and context of the component
+2. To set up a property or access this inside the constructor use super()
+3. 
+
+Forms-  https://reactjs.org/docs/forms.html
+Controlled Components - https://reactjs.org/docs/forms.html#controlled-components
+
+Ajax-
+1. without reloading
+2. send and recive data to server
+fetch- js method
+axios- js library
+
+API
+API is a set of routines, protocols and tools  for building software apps. 
+Basically, API specifies how software components should interact.
+
+https://swapi.co/
+
+componentDidMount-
+1. most commonly used for making ajax calls to load data for your component
+2. can set state 
+
+
+
+fetch- takes path, returns a promise that resolves to the response to that request whether it is successful or not
+
+Promise object represents eventual completion or failure of a asynchronous operation, and its resulting value
