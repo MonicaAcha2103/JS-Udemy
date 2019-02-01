@@ -1,0 +1,124 @@
+
+things to remember=
+you can render{undefined}
+you cannot render object but its childs only 
+conditional rendering- 
+    if/else
+    ternary operator
+    logical and
+
+var,let,const
+var can be redeclared.
+
+JSX does not have a built in data binding. 
+JSX doesnt supports objects. supports arrays, strings, etc
+JSX  ignores null, boolean or undefined[null,undefined,true]=> renders nothing
+
+Synthetic events-
+https://reactjs.org/docs/events.html
+
+this.setState is asynchronous. 
+using 2 set state wont work like Synchronously. moreover the dom will chnage with respective t outdated elements. 
+
+react does merge old and new. Uses virtual DOM to chnage only to changed state. 
+While using 2 or more set state->
+Ideal to use set state with an updater function. 
+Example=    this.setState((prevState) => {
+            return{
+                count: prevState.count - 1
+            };
+        })
+//it'll batch them into one update before rendering
+
+PROPS                                   STATES
+-------                                 ---------
+An object                               An object
+can be used when rendering              can be used when rendering
+Changes(from above) cause rerenders     Changes cause re-renders
+Comes from above                        Defined in component itself
+Cant be changed by Component itself     Can be changed by Component itself
+
+
+Default props- 
+can be used for funstional as wells as class components
+
+  Header.defaultProps = {
+    title:'Indecision'
+  }
+REACT DEV tools
+---------------
+google search- chrome react dev tools
+
+LifeCycle Methods - only available in class components
+-----------------
+componentDidMount() - this gets fired when the component gets mounted to the DOM
+
+componentDidUpdate()- 
+after the state/props values change
+
+componentWillUnmount()- gets fired when the component goes away/disappears
+
+Using local storage
+json.stringfy(object) -object to string
+
+JSON.parse() - string to object
+
+WEBPACK- 
+Webpack is an asset bundler.
+Combine in 3rd party libraries and get a single js file
+
+Module bundler
+
+Allows us to organise our js. ie single js file called bundle
+breaking up all the files
+
+absolute path for output, but relative path for entry in the webpack
+
+const path = require('path');
+
+module.exports = {
+    entry : './src/app.js',
+    output :{
+        path: path.join(__dirname, 'public'),
+        filename: 'bundle.js'
+    }
+};
+
+IMPORT / EXPORT
+---------------
+
+export two types-  inline as well as the end
+
+export const x = () => {..}; 
+
+or export{x};
+
+
+Default export
+export x as default;
+export default (a,b) => a-b; 
+//can be used with anonymous functions i.e without name
+Named import 
+import {x} from 'file';
+
+x();
+
+Default import - no curly braces
+import anything from 'file';
+anything();
+
+props.children
+--------------
+{props.children}=  test text;
+
+render({
+        <test>
+        <p>test text</p>
+        </test>
+    },app)
+
+
+
+
+
+

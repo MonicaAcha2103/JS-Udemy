@@ -1,0 +1,75 @@
+install live server
+install babel cli
+install babel presets-react,env
+babel commands
+---------------
+
+
+
+ npm install -g babel-cli@6.24.1
+npm install babel-preset-env@6.24.1 babel-preset-react@6.24.1
+
+babel src/app.js --out-file=public/scripts/app.js --presets=env,react
+
+babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch 
+//to run babel in the background.
+
+command- live-server public
+
+
+==
+Uninstall to set up with webpack
+
+AVOIDING GLOBAL MODULES AND LENGTHY TERMINAL COMMANDS
+
+npm uninstall -g babel-cli live-server
+install locally without -g
+
+Add this .package.jon-> scripts
+    "serve":"live-server public/",
+    "build-babel":"babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
+
+    in the terminal use the following commands
+    npm run serve
+    npm run build
+
+INSTALLING AND CONFIGURING webpack
+npm install webpack@3.1.0
+
+add in package.json => scripts
+"build ": "webpack"
+
+
+create a new file in root folder- webpack.config.js
+source- https://webpack.js.org/
+
+
+npm install react@16.0.0 react-dom@16.0.0
+add loaders to run the jsx code
+
+npm install babel-core@6.25.0 babel-loader@7.1.1
+
+add loader in webpack
+.babelrc has presets
+
+source map with webpack-to track bugs and get right code instead of minified code
+add devtool in webpack.config.js
+added this -cheap-module-eval-source-map for the project
+
+Install and setup webpack dev server
+
+npm install webpack-dev-server@2.5.1
+babel plugin - stage 2 
+1. npm install babel-plugin-transform-class-properties@6.24.1
+2. add in .babelrc
+
+Things to change
+----------------
+1. can be used to replace constructor completely
+
+2. set variables
+        state={
+            count:0
+        }
+3. instead of bind use arrow functions 
+
