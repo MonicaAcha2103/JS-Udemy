@@ -73,3 +73,16 @@ Things to change
         }
 3. instead of bind use arrow functions 
 
+STYLING-
+
+create a styles folder and styles.css files
+css-loader - to take css and convert it into js representation
+style-loader-  takes css and adds DOM by injecting styles tag
+scss loader and compiler- take scss files
+npm install sass-loader node-sass
+
+ create a folder base inside styles
+ styles
+ --> base
+    -->base.scss
+npm install normalize.css- to work same on a cross browser setting. 

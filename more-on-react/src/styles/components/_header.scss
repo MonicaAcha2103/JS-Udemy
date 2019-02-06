@@ -1,0 +1,21 @@
+.header{
+    background: $off-black;
+    color: white;
+    margin-bottom: $m-size;
+    padding: $m-size 0;
+}
+/* Block ELement Modifier */
+.header__title{
+    font-size: $l-size;
+    margin:0;
+}
+.header__subtitle{
+    color:$off-white;
+    font-size: $l-size;
+    font-weight: 500;
+}
+@media (min-width: $desktop-breakpoint){
+    .header{
+        margin-bottom: $xl-size;
+    }
+}
