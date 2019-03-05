@@ -1,0 +1,75 @@
+install react-router-dom
+
+export browserrouter and route;
+create routes
+modify webpack config. Add historyApiFallback 
+
+
+REDUX-
+Install redux
+Why redux?
+1. Where do i store my app state in a acomplex react app
+2. How do i create components that are actually reusable?
+
+redux is a state container like our class based components
+Create a redux store
+All the components can chnage/read from the store
+Using actions-
+Object sent to the store
+ all the actions need a type.
+
+--------------------------------------------
+ import {createStore} from 'redux';
+
+const store= createStore ((state = {count:0},action) => {
+
+    //access action.type
+    return state;
+});
+
+ store.dispatch({
+     type: 'someaction'
+ })
+
+store.subscribe is a function that gets called whenever the state changes.
+
+Action generators -
+a function that return action objects. 
+Reducers-
+ Are pure functions. Outputs are only determined by the inputs given;
+ var a= 10;
+ const add = (b) => {
+     return a+b;
+ } // This is not a pure function
+ const add1 = (b) => {
+     return b+b;
+ }// this is a pure function
+ 
+ combineReducers will create multiple functions that define how our redux application changes.
+
+ 
+
+
+
+
+
+----------OFF TOPIC---------------------------------
+ES6 Object destructuring
+------------------------
+
+person{
+    name:"abc",
+    location:{
+        city,
+        temp
+    }
+}
+const {name} = person;
+const {city,temp: temperature} = person.location
+creating alias using name: new_name
+setting up defaults - name
+const {name: firstname = 'Anonymous'}
+
+ES6 Array destructuring
+-----------------------
+const [street, city, state, zip]= address
